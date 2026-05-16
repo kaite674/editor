@@ -33,10 +33,10 @@ type ReferenceNode = ScanNode | GuideNode
 function getScaleStatus(guide: GuideNode, scaleReferenceVisible: boolean) {
   const reference = guide.scaleReference
   if (!reference) {
-    return 'Uncalibrated'
+    return '未校准'
   }
 
-  return `${scaleReferenceVisible ? 'Scaled' : 'Scaled (hidden)'} · ${reference.label}`
+  return `${scaleReferenceVisible ? '已缩放' : '已缩放（已隐藏）'} · ${reference.label}`
 }
 
 export function ReferencePanel() {
@@ -80,7 +80,7 @@ export function ReferencePanel() {
       }
 
       if (!file.type.startsWith('image/')) {
-        setReplaceError('Choose a PNG, JPEG, or WebP image.')
+        setReplaceError('请选择 PNG、JPEG 或 WebP 图片。')
         return
       }
 
@@ -99,7 +99,7 @@ export function ReferencePanel() {
         )
         setGuideScaleReferenceVisible(selectedReferenceId, true)
       } catch {
-        setReplaceError('Could not replace that image.')
+        setReplaceError('无法替换该图片。')
       } finally {
         setIsReplacing(false)
       }
@@ -163,7 +163,7 @@ export function ReferencePanel() {
     >
       {!isScan && (
         <>
-          <PanelSection title="Image">
+          <PanelSection title="图片">
             <input
               accept="image/*"
               className="hidden"
@@ -188,7 +188,7 @@ export function ReferencePanel() {
               <ActionButton
                 className="text-destructive hover:bg-destructive/10"
                 icon={<Trash2 className="h-3.5 w-3.5" />}
-                label="Delete"
+                label="删除"
                 onClick={handleDeleteGuide}
               />
             </ActionGroup>
@@ -226,12 +226,12 @@ export function ReferencePanel() {
 
             {isAssetMissing && (
               <div className="rounded-md border border-amber-500/35 bg-amber-500/10 px-2 py-1.5 text-amber-700 text-xs dark:text-amber-300">
-                Overlay image unavailable. Replace the image to restore it.
+                覆盖图不可用。请替换图片以恢复它。
               </div>
             )}
           </PanelSection>
 
-          <PanelSection title="Reference Scale">
+          <PanelSection title="参考缩放">
             <div className="flex items-center gap-2 rounded-md border border-border/50 bg-background/40 px-2.5 py-2 text-sm">
               <Ruler className="h-4 w-4 shrink-0 text-primary" />
               <span className="truncate text-muted-foreground">{scaleStatus}</span>
@@ -242,7 +242,7 @@ export function ReferencePanel() {
                 label={node.scaleReference ? 'Edit Scale' : 'Set Scale'}
                 onClick={handleStartScale}
               />
-              <ActionButton label="Cancel" onClick={handleCancelScale} />
+              <ActionButton label="取消" onClick={handleCancelScale} />
             </ActionGroup>
 
             <ActionGroup>
@@ -262,11 +262,11 @@ export function ReferencePanel() {
             </ActionGroup>
           </PanelSection>
 
-          <PanelSection title="Quick Actions">
+          <PanelSection title="快速操作">
             <ActionGroup>
               <ActionButton
                 icon={<LocateFixed className="h-3.5 w-3.5" />}
-                label="Center"
+                label="居中"
                 onClick={() =>
                   handleUpdate({
                     position: [0, node.position[1], 0],
@@ -275,7 +275,7 @@ export function ReferencePanel() {
               />
               <ActionButton
                 icon={<RotateCcw className="h-3.5 w-3.5" />}
-                label="Reset Rotation"
+                label="重置旋转"
                 onClick={() =>
                   handleUpdate({
                     rotation: [node.rotation[0], 0, node.rotation[2]],
@@ -286,7 +286,7 @@ export function ReferencePanel() {
             <ActionGroup>
               <ActionButton
                 icon={<Ruler className="h-3.5 w-3.5" />}
-                label="Reset Image Scale"
+                label="重置图片缩放"
                 onClick={() => handleUpdate({ scale: 1 } as Partial<GuideNode>)}
               />
             </ActionGroup>
@@ -294,7 +294,7 @@ export function ReferencePanel() {
         </>
       )}
 
-      <PanelSection title="Position">
+      <PanelSection title="位置">
         <SliderControl
           label={
             <>

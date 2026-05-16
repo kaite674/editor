@@ -2,7 +2,7 @@
 
 import type { LevelNode } from '@pascal-app/core'
 import { useEffect, useState } from 'react'
-import type { LevelDuplicatePreset } from '../../lib/level-duplication'
+import type { Level复制Preset } from '../../lib/level-duplication'
 import { cn } from '../../lib/utils'
 import {
   Dialog,
@@ -14,38 +14,38 @@ import {
 } from './primitives/dialog'
 
 const DUPLICATE_PRESETS: Array<{
-  id: LevelDuplicatePreset
+  id: Level复制Preset
   label: string
   description: string
 }> = [
   {
     id: 'everything',
-    label: 'Everything',
-    description: 'Structure, materials, furniture, and references.',
+    label: '全部',
+    description: '结构、材质、家具和参考图。',
   },
   {
     id: 'structure',
-    label: 'Structure only',
-    description: 'Walls, slabs, roofs, stairs, windows, and doors without finishes.',
+    label: '仅结构',
+    description: '墙体、楼板、屋顶、楼梯、窗户和门（不含饰面）。',
   },
   {
     id: 'structure-materials',
-    label: 'Structure + materials',
-    description: 'Structure with the current material and finish assignments.',
+    label: '结构+材质',
+    description: '带有当前材质和饰面的结构。',
   },
   {
     id: 'structure-furniture',
-    label: 'Structure + furniture',
-    description: 'Structure, finishes, and placed items, without guide references.',
+    label: '结构+家具',
+    description: '结构、饰面和放置的物品（不含参考图）。',
   },
 ]
 
 function getLevelLabel(level: LevelNode | null) {
-  if (!level) return 'this level'
-  return level.name || `Level ${level.level}`
+  if (!level) return '此楼层'
+  return level.name || `楼层 ${level.level}`
 }
 
-export function LevelDuplicateDialog({
+export function Level复制Dialog({
   open,
   level,
   onConfirm,
@@ -53,10 +53,10 @@ export function LevelDuplicateDialog({
 }: {
   open: boolean
   level: LevelNode | null
-  onConfirm: (preset: LevelDuplicatePreset) => void
+  onConfirm: (preset: Level复制Preset) => void
   onOpenChange: (open: boolean) => void
 }) {
-  const [preset, setPreset] = useState<LevelDuplicatePreset>('everything')
+  const [preset, setPreset] = useState<Level复制Preset>('everything')
 
   useEffect(() => {
     if (open) {
@@ -68,8 +68,8 @@ export function LevelDuplicateDialog({
     <Dialog onOpenChange={onOpenChange} open={open}>
       <DialogContent className="sm:max-w-md" showCloseButton={false}>
         <DialogHeader>
-          <DialogTitle>Duplicate Level</DialogTitle>
-          <DialogDescription>Choose what to copy from {getLevelLabel(level)}.</DialogDescription>
+          <DialogTitle>复制楼层</DialogTitle>
+          <DialogDescription>选择要复制的内容，来自 {getLevelLabel(level)}.</DialogDescription>
         </DialogHeader>
 
         <div className="grid gap-2">
@@ -97,14 +97,14 @@ export function LevelDuplicateDialog({
             onClick={() => onOpenChange(false)}
             type="button"
           >
-            Cancel
+            取消
           </button>
           <button
             className="cursor-pointer rounded-md bg-primary px-4 py-2 text-primary-foreground text-sm transition-opacity hover:opacity-90"
             onClick={() => onConfirm(preset)}
             type="button"
           >
-            Duplicate
+            复制
           </button>
         </DialogFooter>
       </DialogContent>
