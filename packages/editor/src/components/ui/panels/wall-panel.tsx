@@ -112,12 +112,12 @@ export function WallPanel() {
     <PanelWrapper
       icon="/icons/wall.png"
       onClose={handleClose}
-      title={node.name || 'Wall'}
+      title={node.name || '墙体'}
       width={280}
     >
-      <PanelSection title="Dimensions">
+      <PanelSection title="尺寸">
         <SliderControl
-          label="Length"
+          label="长度"
           max={20}
           min={0.1}
           onChange={handleUpdateLength}
@@ -127,7 +127,7 @@ export function WallPanel() {
           value={length}
         />
         <SliderControl
-          label="Height"
+          label="高度"
           max={6}
           min={0.1}
           onChange={(v) => handleUpdate({ height: Math.max(0.1, v) })}
@@ -137,7 +137,7 @@ export function WallPanel() {
           value={Math.round(height * 100) / 100}
         />
         <SliderControl
-          label="Thickness"
+          label="厚度"
           max={1}
           min={0.05}
           onChange={(v) => handleUpdate({ thickness: Math.max(0.05, v) })}
@@ -148,7 +148,7 @@ export function WallPanel() {
         />
         {!hasWallChildrenBlockingCurve && (
           <SliderControl
-            label="Curve"
+            label="弯曲"
             max={Math.max(0.01, maxCurveOffset)}
             min={-Math.max(0.01, maxCurveOffset)}
             onChange={(v) => handleUpdate({ curveOffset: normalizeWallCurveOffset(node, v) })}
@@ -160,13 +160,13 @@ export function WallPanel() {
         )}
       </PanelSection>
 
-      <PanelSection title="Actions">
+      <PanelSection title="操作">
         <ActionGroup>
-          <ActionButton icon={<Move className="h-3.5 w-3.5" />} label="Move" onClick={handleMove} />
+          <ActionButton icon={<Move className="h-3.5 w-3.5" />} label="移动" onClick={handleMove} />
           {!hasWallChildrenBlockingCurve && (
             <ActionButton
               icon={<Spline className="h-3.5 w-3.5" />}
-              label="Curve"
+              label="弯曲"
               onClick={handleCurve}
             />
           )}
