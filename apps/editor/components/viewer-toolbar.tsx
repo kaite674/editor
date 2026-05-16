@@ -63,24 +63,24 @@ const VIEW_MODES: { id: ViewMode; label: string; icon: React.ReactNode }[] = [
   },
   {
     id: 'split',
-    label: 'Split',
+    label: '分屏',
     icon: <Columns2 className="h-3 w-3" />,
   },
 ]
 
 const levelModeOrder = ['stacked', 'exploded', 'solo'] as const
 const levelModeLabels: Record<string, string> = {
-  manual: 'Stack',
-  stacked: 'Stack',
-  exploded: 'Exploded',
-  solo: 'Solo',
+  manual: '堆叠',
+  stacked: '堆叠',
+  exploded: '展开',
+  solo: '单独',
 }
 
 const wallModeOrder = ['cutaway', 'up', 'down'] as const
 const wallModeConfig: Record<string, { icon: string; label: string }> = {
-  up: { icon: '/icons/room.png', label: 'Full height' },
-  cutaway: { icon: '/icons/wallcut.png', label: 'Cutaway' },
-  down: { icon: '/icons/walllow.png', label: 'Low' },
+  up: { icon: '/icons/room.png', label: '全高' },
+  cutaway: { icon: '/icons/wallcut.png', label: '切面' },
+  down: { icon: '/icons/walllow.png', label: '低矮' },
 }
 
 function ViewModeControl() {

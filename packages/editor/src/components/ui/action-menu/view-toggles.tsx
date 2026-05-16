@@ -85,7 +85,7 @@ function useLowerReferenceLevels(): LevelNode[] {
 }
 
 function getLevelDisplayName(level: LevelNode) {
-  return level.name || `Level ${level.level}`
+  return level.name || `楼层 ${level.level}`
 }
 
 // ── Shared upload button for dropdowns ──────────────────────────────────────
@@ -108,7 +108,7 @@ function UploadButton({ onError }: { onError: (message: string | null) => void }
       onError(null)
 
       if (file.size > MAX_FILE_SIZE) {
-        onError('File is too large. Maximum size is 200 MB.')
+        onError('文件太大。最大大小为 200 MB。')
         return
       }
 
@@ -116,7 +116,7 @@ function UploadButton({ onError }: { onError: (message: string | null) => void }
         file.name.toLowerCase().endsWith('.glb') || file.name.toLowerCase().endsWith('.gltf')
       const isImage = file.type.startsWith('image/')
       if (!(isScan || isImage)) {
-        onError('Upload a .glb/.gltf scan or an image.')
+        onError('请上传 .glb/.gltf 扫描文件或图片。')
         return
       }
 
@@ -128,7 +128,7 @@ function UploadButton({ onError }: { onError: (message: string | null) => void }
           setSelectedReferenceId(guide.id)
           setSelection({ selectedIds: [], zoneId: null })
         } catch {
-          onError('Could not add that guide image.')
+          onError('无法添加该参考图片。')
         } finally {
           setIsAddingGuide(false)
         }
@@ -137,13 +137,13 @@ function UploadButton({ onError }: { onError: (message: string | null) => void }
 
       const { uploadHandler } = useUploadStore.getState()
       if (!uploadHandler) {
-        onError('Scan upload is unavailable.')
+        onError('扫描上传不可用。')
         return
       }
 
       const projectId = window.location.pathname.split('/editor/')[1]?.split('/')[0]
       if (!projectId) {
-        onError('Open a project before uploading a scan.')
+        onError('上传扫描前请先打开项目。')
         return
       }
 
@@ -218,14 +218,14 @@ function GuidesControl() {
               ? 'bg-white/15'
               : 'opacity-60 grayscale hover:bg-white/5 hover:opacity-100 hover:grayscale-0',
           )}
-          label={`Guides: ${showGuides ? 'Visible' : 'Hidden'}`}
+          label={`参考图: ${showGuides ? '可见' : '隐藏'}`}
           onClick={() => setShowGuides(!showGuides)}
           size="icon"
           variant="ghost"
         >
           <div className="relative">
             <img
-              alt="Guides"
+              alt="参考图"
               className="h-[28px] w-[28px] object-contain"
               src="/icons/floorplan.png"
             />
@@ -239,7 +239,7 @@ function GuidesControl() {
         <PopoverTrigger asChild>
           <button
             aria-expanded={isOpen}
-            aria-label="Guide image settings"
+            aria-label="参考图设置"
             className={cn(
               'flex h-11 w-6 items-center justify-center rounded-r-lg transition-colors',
               showGuides
@@ -269,10 +269,10 @@ function GuidesControl() {
               <img alt="" className="h-4 w-4 object-contain" src="/icons/floorplan.png" />
             </span>
             <div className="min-w-0 flex-1">
-              <p className="font-medium text-foreground text-sm">Guide images</p>
+              <p className="font-medium text-foreground text-sm">参考图片</p>
               {hasGuides && (
                 <p className="text-muted-foreground text-xs">
-                  {guides.length} guide image{guides.length !== 1 ? 's' : ''} on this level
+                  此楼层有 {guides.length} 张参考图片
                 </p>
               )}
             </div>
@@ -309,14 +309,14 @@ function GuidesControl() {
                         src="/icons/floorplan.png"
                       />
                       <p className="truncate font-medium text-foreground text-sm">
-                        {guide.name || `Guide image ${index + 1}`}
+                        {guide.name || `参考图片 ${index + 1}`}
                       </p>
                       {selectedReferenceId === guide.id && (
                         <Check className="ml-auto h-3.5 w-3.5 shrink-0 text-foreground/80" />
                       )}
                     </button>
                     <button
-                      aria-label="Delete guide image"
+                      aria-label="删除参考图片"
                       className="flex h-5 w-5 shrink-0 items-center justify-center rounded-md text-muted-foreground/50 opacity-0 transition-all hover:bg-destructive/10 hover:text-destructive group-hover/item:opacity-100"
                       onClick={(event) => {
                         event.stopPropagation()
@@ -331,7 +331,7 @@ function GuidesControl() {
                     </button>
                   </div>
                   <SliderControl
-                    label="Opacity"
+                    label="不透明度"
                     max={100}
                     min={0}
                     onChange={(value) => handleOpacityChange(guide.id, value)}
@@ -345,7 +345,7 @@ function GuidesControl() {
             </div>
           ) : (
             <div className="rounded-xl border border-border/45 border-dashed bg-background/60 px-3 py-4 text-muted-foreground text-sm">
-              No guide images on this level yet.
+              此楼层还没有参考图片。
             </div>
           )}
         </div>
