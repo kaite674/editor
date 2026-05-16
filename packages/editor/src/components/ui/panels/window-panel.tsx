@@ -69,15 +69,15 @@ function isSameRadiusTuple(
 }
 
 const windowTypeOptions: Array<{ label: string; value: WindowNode['windowType'] }> = [
-  { label: 'Fixed', value: 'fixed' },
-  { label: 'Sliding', value: 'sliding' },
-  { label: 'Casement', value: 'casement' },
-  { label: 'Awning', value: 'awning' },
-  { label: 'Single Hung', value: 'single-hung' },
-  { label: 'Double Hung', value: 'double-hung' },
-  { label: 'Bay', value: 'bay' },
-  { label: 'Bow', value: 'bow' },
-  { label: 'Louvered', value: 'louvered' },
+  { label: '固定窗', value: 'fixed' },
+  { label: '推拉窗', value: 'sliding' },
+  { label: '平开窗', value: 'casement' },
+  { label: '上悬窗', value: 'awning' },
+  { label: '单扇提拉窗', value: 'single-hung' },
+  { label: '双扇提拉窗', value: 'double-hung' },
+  { label: '凸窗', value: 'bay' },
+  { label: '弧形窗', value: 'bow' },
+  { label: '百叶窗', value: 'louvered' },
 ]
 
 const shapedWindowTypes = new Set<WindowNode['windowType']>([
@@ -414,7 +414,7 @@ export function WindowPanel() {
     <PanelWrapper
       icon="/icons/window.png"
       onClose={handleClose}
-      title={node.name || 'Window'}
+      title={node.name || '窗户'}
       width={320}
     >
       {/* Presets strip */}
@@ -433,12 +433,12 @@ export function WindowPanel() {
         >
           <button className="flex w-full items-center gap-2 rounded-lg border border-border/50 bg-[#2C2C2E] px-3 py-2 font-medium text-muted-foreground text-xs transition-colors hover:bg-[#3e3e3e] hover:text-foreground">
             <BookMarked className="h-3.5 w-3.5 shrink-0" />
-            <span>Presets</span>
+            <span>预设</span>
           </button>
         </PresetsPopover>
       </div>
 
-      <PanelSection title="Type">
+      <PanelSection title="类型">
         <SegmentedControl
           onChange={(value) =>
             handleUpdate({
@@ -456,15 +456,15 @@ export function WindowPanel() {
             })
           }
           options={[
-            { value: 'window', label: 'Window' },
-            { value: 'opening', label: 'Opening' },
+            { value: 'window', label: '窗户' },
+            { value: 'opening', label: '洞口' },
           ]}
           value={node.openingKind ?? 'window'}
         />
       </PanelSection>
 
       {!isOpening && (
-        <PanelSection title="Window Type">
+        <PanelSection title="窗户类型">
           <div className="grid grid-cols-2 gap-1.5 px-1 pt-1">
             {windowTypeOptions.map((option) => {
               const isSelected = displayedWindowType === option.value
@@ -504,8 +504,8 @@ export function WindowPanel() {
                   })
                 }
                 options={[
-                  { value: 'up', label: 'Up' },
-                  { value: 'down', label: 'Down' },
+                  { value: 'up', label: '上' },
+                  { value: 'down', label: '下' },
                 ]}
                 value={awningDirection}
               />
@@ -518,8 +518,8 @@ export function WindowPanel() {
                   handleUpdate({ casementStyle: value as WindowNode['casementStyle'] })
                 }
                 options={[
-                  { value: 'single', label: 'Single' },
-                  { value: 'french', label: 'French' },
+                  { value: 'single', label: '单扇' },
+                  { value: 'french', label: '法式' },
                 ]}
                 value={node.casementStyle ?? 'single'}
               />
@@ -529,8 +529,8 @@ export function WindowPanel() {
                     handleUpdate({ hingesSide: value as WindowNode['hingesSide'] })
                   }
                   options={[
-                    { value: 'left', label: 'Left' },
-                    { value: 'right', label: 'Right' },
+                    { value: 'left', label: '左' },
+                    { value: 'right', label: '右' },
                   ]}
                   value={node.hingesSide ?? 'left'}
                 />
@@ -540,7 +540,7 @@ export function WindowPanel() {
           {isOperableWindow && (
             <div className="mt-2">
               <SliderControl
-                label="Open"
+                label="打开"
                 max={1}
                 min={0}
                 onChange={setOperationState}
@@ -554,11 +554,11 @@ export function WindowPanel() {
         </PanelSection>
       )}
 
-      <PanelSection title="Position">
+      <PanelSection title="位置">
         <SliderControl
           label={
             <>
-              X<sub className="ml-[1px] text-[11px] opacity-70">pos</sub>
+              X<sub className="ml-[1px] text-[11px] opacity-70">位置</sub>
             </>
           }
           onChange={(v) => handleUpdate({ position: [v, node.position[1], node.position[2]] })}
@@ -570,7 +570,7 @@ export function WindowPanel() {
         <SliderControl
           label={
             <>
-              Y<sub className="ml-[1px] text-[11px] opacity-70">pos</sub>
+              Y<sub className="ml-[1px] text-[11px] opacity-70">位置</sub>
             </>
           }
           onChange={(v) => handleUpdate({ position: [node.position[0], v, node.position[2]] })}
@@ -584,16 +584,16 @@ export function WindowPanel() {
             <ActionButton
               className="w-full"
               icon={<FlipHorizontal2 className="h-4 w-4" />}
-              label="Flip Side"
+              label="翻转"
               onClick={handleFlip}
             />
           </div>
         )}
       </PanelSection>
 
-      <PanelSection title="Dimensions">
+      <PanelSection title="尺寸">
         <SliderControl
-          label="Width"
+          label="宽度"
           min={0}
           onChange={(v) => handleUpdate(getDimensionUpdates({ width: v }))}
           precision={2}
@@ -603,7 +603,7 @@ export function WindowPanel() {
           value={Math.round(node.width * 100) / 100}
         />
         <SliderControl
-          label="Height"
+          label="高度"
           min={0}
           onChange={(v) => handleUpdate(getDimensionUpdates({ height: v }))}
           precision={2}
@@ -615,7 +615,7 @@ export function WindowPanel() {
       </PanelSection>
 
       {!isOpening && supportsWindowShape && (
-        <PanelSection title="Corner Shape">
+        <PanelSection title="边角形状">
           <SegmentedControl
             onChange={(value) =>
               handleUpdate({
@@ -633,9 +633,9 @@ export function WindowPanel() {
               })
             }
             options={[
-              { value: 'rectangle', label: 'Rect' },
-              { value: 'rounded', label: 'Rounded' },
-              { value: 'arch', label: 'Arch' },
+              { value: 'rectangle', label: '矩形' },
+              { value: 'rounded', label: '圆角' },
+              { value: 'arch', label: '拱形' },
             ]}
             value={windowShape}
           />
@@ -646,14 +646,14 @@ export function WindowPanel() {
                   handleUpdate({ openingRadiusMode: value as WindowNode['openingRadiusMode'] })
                 }
                 options={[
-                  { value: 'all', label: 'All' },
-                  { value: 'individual', label: 'Individual' },
+                  { value: 'all', label: '全部' },
+                  { value: 'individual', label: '单独' },
                 ]}
                 value={openingRadiusMode}
               />
               {openingRadiusMode === 'all' ? (
                 <SliderControl
-                  label="Corner Radius"
+                  label="圆角半径"
                   max={maxRoundedRadius}
                   min={0}
                   onChange={(value) => previewWindowUpdate('cornerRadius', value)}
@@ -666,10 +666,10 @@ export function WindowPanel() {
               ) : (
                 <>
                   {[
-                    ['Top Left', 0],
-                    ['Top Right', 1],
-                    ['Bottom Right', 2],
-                    ['Bottom Left', 3],
+                    ['左上角', 0],
+                    ['右上角', 1],
+                    ['右下角', 2],
+                    ['左下角', 3],
                   ].map(([label, index]) => (
                     <SliderControl
                       key={label}

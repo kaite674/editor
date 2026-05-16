@@ -25,13 +25,13 @@ import { PanelWrapper } from './panel-wrapper'
 import { PresetsPopover } from './presets/presets-popover'
 
 const doorTypeOptions = [
-  { label: 'Hinged', value: 'hinged', available: true },
-  { label: 'Double', value: 'double', available: true },
-  { label: 'French', value: 'french', available: true },
-  { label: 'Folding', value: 'folding', available: true },
-  { label: 'Pocket', value: 'pocket', available: true },
-  { label: 'Barn', value: 'barn', available: true },
-  { label: 'Sliding', value: 'sliding', available: true },
+  { label: '平开门', value: 'hinged', available: true },
+  { label: '双开门', value: 'double', available: true },
+  { label: '法式门', value: 'french', available: true },
+  { label: '折叠门', value: 'folding', available: true },
+  { label: '口袋门', value: 'pocket', available: true },
+  { label: '谷仓门', value: 'barn', available: true },
+  { label: '推拉门', value: 'sliding', available: true },
 ] satisfies {
   label: string
   value: DoorNode['doorType']
@@ -39,9 +39,9 @@ const doorTypeOptions = [
 }[]
 
 const garageDoorTypeOptions = [
-  { label: 'Sectional', value: 'garage-sectional', available: true },
-  { label: 'Roll-up', value: 'garage-rollup', available: true },
-  { label: 'Tilt-up', value: 'garage-tiltup', available: true },
+  { label: '分节式', value: 'garage-sectional', available: true },
+  { label: '卷帘式', value: 'garage-rollup', available: true },
+  { label: '上翻式', value: 'garage-tiltup', available: true },
 ] satisfies {
   label: string
   value: DoorNode['doorType']
@@ -530,7 +530,7 @@ export function DoorPanel() {
     <PanelWrapper
       icon="/icons/door.png"
       onClose={handleClose}
-      title={node.name || 'Door'}
+      title={node.name || '门'}
       width={320}
     >
       {/* Presets strip */}
@@ -549,12 +549,12 @@ export function DoorPanel() {
         >
           <button className="flex w-full items-center gap-2 rounded-lg border border-border/50 bg-[#2C2C2E] px-3 py-2 font-medium text-muted-foreground text-xs transition-colors hover:bg-[#3e3e3e] hover:text-foreground">
             <BookMarked className="h-3.5 w-3.5 shrink-0" />
-            <span>Presets</span>
+            <span>预设</span>
           </button>
         </PresetsPopover>
       </div>
 
-      <PanelSection title="Type">
+      <PanelSection title="类型">
         <div className="flex flex-col gap-2 px-1 pb-1">
           <SegmentedControl
             onChange={(v) =>
@@ -581,9 +581,9 @@ export function DoorPanel() {
               )
             }
             options={[
-              { label: 'Door', value: 'door' },
-              { label: 'Opening', value: 'opening' },
-              { label: 'Garage', value: 'garage' },
+              { label: '门', value: 'door' },
+              { label: '洞口', value: 'opening' },
+              { label: '车库', value: 'garage' },
             ]}
             value={typeMode}
           />
@@ -616,11 +616,11 @@ export function DoorPanel() {
         )}
       </PanelSection>
 
-      <PanelSection title="Position">
+      <PanelSection title="位置">
         <SliderControl
           label={
             <>
-              X<sub className="ml-[1px] text-[11px] opacity-70">wall</sub>
+              X<sub className="ml-[1px] text-[11px] opacity-70">墙</sub>
             </>
           }
           max={10}
@@ -636,7 +636,7 @@ export function DoorPanel() {
             <ActionButton
               className="w-full"
               icon={<FlipHorizontal2 className="h-4 w-4" />}
-              label="Flip Side"
+              label="翻转"
               onClick={handleFlip}
             />
           </div>
@@ -644,11 +644,11 @@ export function DoorPanel() {
       </PanelSection>
 
       {doorType === 'folding' && !isOpening && (
-        <PanelSection title="Fold">
+        <PanelSection title="折叠">
           <div className="flex flex-col gap-2 px-1 pb-1">
             <div className="space-y-1">
               <span className="font-medium text-[10px] text-muted-foreground/80 uppercase tracking-wider">
-                Panels
+                扇数
               </span>
               <SegmentedControl
                 onChange={(v) => handleUpdate({ leafCount: v === '2' ? 2 : 4 })}
@@ -661,7 +661,7 @@ export function DoorPanel() {
             </div>
           </div>
           <SliderControl
-            label="Open"
+            label="打开"
             max={100}
             min={0}
             onChange={(v) => handleUpdate({ operationState: v / 100 })}
@@ -675,24 +675,24 @@ export function DoorPanel() {
       )}
 
       {isSlidingDoor && !isOpening && (
-        <PanelSection title="Slide">
+        <PanelSection title="滑动">
           <div className="flex flex-col gap-2 px-1 pb-1">
             <div className="space-y-1">
               <span className="font-medium text-[10px] text-muted-foreground/80 uppercase tracking-wider">
-                {doorType === 'pocket' ? 'Pocket' : doorType === 'barn' ? 'Rail' : 'Panel'}
+                {doorType === 'pocket' ? '口袋' : doorType === 'barn' ? '轨道' : '门扇'}
               </span>
               <SegmentedControl
                 onChange={(v) => handleUpdate({ slideDirection: v })}
                 options={[
-                  { label: 'Left', value: 'left' },
-                  { label: 'Right', value: 'right' },
+                  { label: '左', value: 'left' },
+                  { label: '右', value: 'right' },
                 ]}
                 value={node.slideDirection ?? 'left'}
               />
             </div>
           </div>
           <SliderControl
-            label="Open"
+            label="打开"
             max={100}
             min={0}
             onChange={(v) => handleUpdate({ operationState: v / 100 })}
@@ -706,9 +706,9 @@ export function DoorPanel() {
       )}
 
       {(isSectionalGarageDoor || isRollupGarageDoor || isTiltupGarageDoor) && !isOpening && (
-        <PanelSection title="Garage">
+        <PanelSection title="车库">
           <SliderControl
-            label="Open"
+            label="打开"
             max={100}
             min={0}
             onChange={(v) => handleUpdate({ operationState: v / 100 })}
