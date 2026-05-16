@@ -3,7 +3,7 @@ import { useViewer } from '@pascal-app/viewer'
 import { TreeView, VisualJson } from '@visual-json/react'
 import { Camera, Download, Save, Trash2, Upload } from 'lucide-react'
 import {
-  type KeyboardEvent,
+  type 键盘Event,
   type SyntheticEvent,
   useCallback,
   useMemo,
@@ -19,8 +19,8 @@ import {
 } from './../../../../../components/ui/primitives/dialog'
 import { Switch } from './../../../../../components/ui/primitives/switch'
 import useEditor, { selectDefaultBuildingAndLevel } from './../../../../../store/use-editor'
-import { AudioSettingsDialog } from './audio-settings-dialog'
-import { KeyboardShortcutsDialog } from './keyboard-shortcuts-dialog'
+import { 音频SettingsDialog } from './audio-settings-dialog'
+import { 键盘ShortcutsDialog } from './keyboard-shortcuts-dialog'
 
 type SceneNode = Record<string, unknown> & {
   id?: unknown
@@ -155,25 +155,25 @@ const buildSceneGraphValue = (
   }
 }
 
-export interface ProjectVisibility {
+export interface Project可见性 {
   isPrivate: boolean
-  showScansPublic: boolean
-  showGuidesPublic: boolean
+  showScans公开: boolean
+  showGuides公开: boolean
 }
 
 export interface SettingsPanelProps {
   projectId?: string
-  projectVisibility?: ProjectVisibility
-  onVisibilityChange?: (
-    field: 'isPrivate' | 'showScansPublic' | 'showGuidesPublic',
+  project可见性?: Project可见性
+  on可见性Change?: (
+    field: 'isPrivate' | 'showScans公开' | 'showGuides公开',
     value: boolean,
   ) => Promise<void>
 }
 
 export function SettingsPanel({
   projectId,
-  projectVisibility,
-  onVisibilityChange,
+  project可见性,
+  on可见性Change,
 }: SettingsPanelProps = {}) {
   const fileInputRef = useRef<HTMLInputElement>(null)
   const nodes = useScene((state) => state.nodes)
@@ -184,7 +184,7 @@ export function SettingsPanel({
   const exportScene = useViewer((state) => state.exportScene)
   const showGrid = useViewer((state) => state.showGrid)
   const setPhase = useEditor((state) => state.setPhase)
-  const [isGeneratingThumbnail, setIsGeneratingThumbnail] = useState(false)
+  const [is生成中..., setIs生成中...] = useState(false)
   const sceneGraphValue = useMemo(
     () => buildSceneGraphValue(nodes as Record<string, SceneNode>, rootNodeIds),
     [nodes, rootNodeIds],
@@ -193,7 +193,7 @@ export function SettingsPanel({
     event.preventDefault()
     event.stopPropagation()
   }, [])
-  const blockSceneGraphDeletion = useCallback((event: KeyboardEvent<HTMLDivElement>) => {
+  const blockSceneGraphDeletion = useCallback((event: 键盘Event<HTMLDivElement>) => {
     if (event.key === 'Delete' || event.key === 'Backspace') {
       event.preventDefault()
       event.stopPropagation()
@@ -245,62 +245,62 @@ export function SettingsPanel({
     selectDefaultBuildingAndLevel()
   }
 
-  const handleGenerateThumbnail = () => {
+  const handleGenerate缩略图 = () => {
     if (!projectId) return
-    setIsGeneratingThumbnail(true)
+    setIs生成中...(true)
     emitter.emit('camera-controls:generate-thumbnail', { projectId })
-    setTimeout(() => setIsGeneratingThumbnail(false), 3000)
+    setTimeout(() => setIs生成中...(false), 3000)
   }
 
-  const handleVisibilityChange = async (
-    field: 'isPrivate' | 'showScansPublic' | 'showGuidesPublic',
+  const handle可见性Change = async (
+    field: 'isPrivate' | 'showScans公开' | 'showGuides公开',
     value: boolean,
   ) => {
-    await onVisibilityChange?.(field, value)
+    await on可见性Change?.(field, value)
   }
 
   return (
     <div className="flex flex-col gap-6 p-3">
-      {/* Visibility Section (only for cloud projects) */}
+      {/* 可见性 Section (only for cloud projects) */}
       {projectId && !isLocalProject && (
         <div className="space-y-3">
-          <label className="font-medium text-muted-foreground text-xs uppercase">Visibility</label>
+          <label className="font-medium text-muted-foreground text-xs uppercase">可见性</label>
           <div className="flex items-center justify-between">
             <div>
-              <div className="font-medium text-sm">Public</div>
+              <div className="font-medium text-sm">公开</div>
               <div className="text-muted-foreground text-xs">
-                {projectVisibility?.isPrivate ? 'Only you' : 'Anyone'} can view
+                {project可见性?.isPrivate ? '仅您可见' : '任何人'} 可查看
               </div>
             </div>
             <Switch
-              checked={!(projectVisibility?.isPrivate ?? false)}
-              onCheckedChange={(checked) => handleVisibilityChange('isPrivate', !checked)}
+              checked={!(project可见性?.isPrivate ?? false)}
+              onCheckedChange={(checked) => handle可见性Change('isPrivate', !checked)}
             />
           </div>
           <div className="flex items-center justify-between">
             <div>
-              <div className="font-medium text-sm">Show 3D Scans</div>
-              <div className="text-muted-foreground text-xs">Visible to public viewers</div>
+              <div className="font-medium text-sm">显示 3D 扫描</div>
+              <div className="text-muted-foreground text-xs">对公开查看者可见</div>
             </div>
             <Switch
-              checked={projectVisibility?.showScansPublic ?? true}
-              onCheckedChange={(checked) => handleVisibilityChange('showScansPublic', checked)}
+              checked={project可见性?.showScans公开 ?? true}
+              onCheckedChange={(checked) => handle可见性Change('showScans公开', checked)}
             />
           </div>
           <div className="flex items-center justify-between">
             <div>
-              <div className="font-medium text-sm">Show Floorplans</div>
-              <div className="text-muted-foreground text-xs">Visible to public viewers</div>
+              <div className="font-medium text-sm">显示平面图</div>
+              <div className="text-muted-foreground text-xs">对公开查看者可见</div>
             </div>
             <Switch
-              checked={projectVisibility?.showGuidesPublic ?? true}
-              onCheckedChange={(checked) => handleVisibilityChange('showGuidesPublic', checked)}
+              checked={project可见性?.showGuides公开 ?? true}
+              onCheckedChange={(checked) => handle可见性Change('showGuides公开', checked)}
             />
           </div>
           <div className="flex items-center justify-between">
             <div>
-              <div className="font-medium text-sm">Show Grid</div>
-              <div className="text-muted-foreground text-xs">Visible only in the editor</div>
+              <div className="font-medium text-sm">显示网格</div>
+              <div className="text-muted-foreground text-xs">仅在编辑器中可见</div>
             </div>
             <Switch
               checked={showGrid}
@@ -310,16 +310,16 @@ export function SettingsPanel({
         </div>
       )}
 
-      {/* Export Section */}
+      {/* 导出 Section */}
       <div className="space-y-2">
-        <label className="font-medium text-muted-foreground text-xs uppercase">Export</label>
+        <label className="font-medium text-muted-foreground text-xs uppercase">导出</label>
         <Button
           className="w-full justify-start gap-2"
           onClick={() => exportScene?.('glb')}
           variant="outline"
         >
           <Download className="size-4" />
-          Export GLB
+          导出 GLB
         </Button>
         <Button
           className="w-full justify-start gap-2"
@@ -327,7 +327,7 @@ export function SettingsPanel({
           variant="outline"
         >
           <Download className="size-4" />
-          Export STL
+          导出 STL
         </Button>
         <Button
           className="w-full justify-start gap-2"
@@ -335,33 +335,33 @@ export function SettingsPanel({
           variant="outline"
         >
           <Download className="size-4" />
-          Export OBJ
+          导出 OBJ
         </Button>
       </div>
 
-      {/* Thumbnail Section (only for cloud projects) */}
+      {/* 缩略图 Section (only for cloud projects) */}
       {projectId && !isLocalProject && (
         <div className="space-y-2">
-          <label className="font-medium text-muted-foreground text-xs uppercase">Thumbnail</label>
+          <label className="font-medium text-muted-foreground text-xs uppercase">缩略图</label>
           <Button
             className="w-full justify-start gap-2"
-            disabled={isGeneratingThumbnail}
-            onClick={handleGenerateThumbnail}
+            disabled={is生成中...}
+            onClick={handleGenerate缩略图}
             variant="outline"
           >
             <Camera className="size-4" />
-            {isGeneratingThumbnail ? 'Generating...' : 'Generate Thumbnail'}
+            {is生成中... ? '生成中...' : 'Generate 缩略图'}
           </Button>
         </div>
       )}
 
       {/* Save/Load Section */}
       <div className="space-y-2">
-        <label className="font-medium text-muted-foreground text-xs uppercase">Save & Load</label>
+        <label className="font-medium text-muted-foreground text-xs uppercase">保存与加载</label>
 
         <Button className="w-full justify-start gap-2" onClick={handleSaveBuild} variant="outline">
           <Save className="size-4" />
-          Save Build
+          保存场景
         </Button>
 
         <Button
@@ -370,7 +370,7 @@ export function SettingsPanel({
           variant="outline"
         >
           <Upload className="size-4" />
-          Load Build
+          加载场景
         </Button>
 
         <input
@@ -382,21 +382,21 @@ export function SettingsPanel({
         />
       </div>
 
-      {/* Audio Section */}
+      {/* 音频 Section */}
       <div className="space-y-2">
-        <label className="font-medium text-muted-foreground text-xs uppercase">Audio</label>
-        <AudioSettingsDialog />
+        <label className="font-medium text-muted-foreground text-xs uppercase">音频</label>
+        <音频SettingsDialog />
       </div>
 
-      {/* Keyboard Section */}
+      {/* 键盘 Section */}
       <div className="space-y-2">
-        <label className="font-medium text-muted-foreground text-xs uppercase">Keyboard</label>
-        <KeyboardShortcutsDialog />
+        <label className="font-medium text-muted-foreground text-xs uppercase">键盘</label>
+        <键盘ShortcutsDialog />
       </div>
 
-      {/* Scene Graph */}
+      {/* 场景结构 */}
       <div className="space-y-1">
-        <label className="font-medium text-muted-foreground text-xs uppercase">Scene Graph</label>
+        <label className="font-medium text-muted-foreground text-xs uppercase">场景结构</label>
         <Dialog>
           <DialogTrigger asChild>
             <Button className="h-auto justify-start p-0 text-sm" variant="link">
@@ -404,7 +404,7 @@ export function SettingsPanel({
             </Button>
           </DialogTrigger>
           <DialogContent className="h-[80vh] max-w-[95vw] gap-0 overflow-hidden border-0 bg-[#1e1e1e] p-0 shadow-none sm:max-w-5xl">
-            <DialogTitle className="sr-only">Scene Graph</DialogTitle>
+            <DialogTitle className="sr-only">场景结构</DialogTitle>
             <div
               className="flex h-full min-h-0 w-full min-w-0 *:h-full *:w-full *:overflow-y-auto"
               onContextMenuCapture={blockSceneGraphMutations}
