@@ -134,10 +134,10 @@ export function CeilingPanel() {
     <PanelWrapper
       icon="/icons/ceiling.png"
       onClose={handleClose}
-      title={node.name || 'Ceiling'}
+      title={node.name || '天花板'}
       width={320}
     >
-      <PanelSection title="Height">
+      <PanelSection title="高度">
         <SliderControl
           label="Height"
           max={6}
@@ -150,20 +150,20 @@ export function CeilingPanel() {
         />
 
         <div className="mt-2 grid grid-cols-3 gap-1.5 px-1 pb-1">
-          <ActionButton label="Low (2.4m)" onClick={() => handleUpdate({ height: 2.4 })} />
-          <ActionButton label="Standard (2.5m)" onClick={() => handleUpdate({ height: 2.5 })} />
-          <ActionButton label="High (3.0m)" onClick={() => handleUpdate({ height: 3.0 })} />
+          <ActionButton label="低 (2.4m)" onClick={() => handleUpdate({ height: 2.4 })} />
+          <ActionButton label="标准 (2.5m)" onClick={() => handleUpdate({ height: 2.5 })} />
+          <ActionButton label="高 (3.0m)" onClick={() => handleUpdate({ height: 3.0 })} />
         </div>
       </PanelSection>
 
-      <PanelSection title="Info">
+      <PanelSection title="信息">
         <div className="flex items-center justify-between px-2 py-1 text-muted-foreground text-sm">
-          <span>Area</span>
+          <span>面积</span>
           <span className="font-mono text-white">{area.toFixed(2)} m²</span>
         </div>
       </PanelSection>
 
-      <PanelSection title="Holes">
+      <PanelSection title="洞口">
         {node.holes && node.holes.length > 0 ? (
           <div className="flex flex-col gap-1 pb-2">
             {node.holes.map((hole, index) => {
@@ -190,7 +190,7 @@ export function CeilingPanel() {
                     </p>
                     <p className="text-[10px] text-muted-foreground">
                       {holeArea.toFixed(2)} m² · {hole.length} pts ·{' '}
-                      {isAutoHole ? autoLabel : 'Manual'}
+                      {isAutoHole ? autoLabel : '手动'}
                     </p>
                   </div>
                   <div className="flex items-center gap-1">
@@ -228,7 +228,7 @@ export function CeilingPanel() {
             })}
           </div>
         ) : (
-          <div className="px-2 py-3 text-center text-muted-foreground text-xs">No holes</div>
+          <div className="px-2 py-3 text-center text-muted-foreground text-xs">无洞口</div>
         )}
 
         <div className="px-1 pt-1 pb-1">
@@ -236,14 +236,14 @@ export function CeilingPanel() {
             className="w-full"
             disabled={editingHole?.nodeId === selectedId}
             icon={<Plus className="h-3.5 w-3.5" />}
-            label="Add Hole"
+            label="添加洞口"
             onClick={handleAddHole}
           />
         </div>
       </PanelSection>
 
       <ActionGroup>
-        <ActionButton icon={<Move className="h-3.5 w-3.5" />} label="Move" onClick={handleMove} />
+        <ActionButton icon={<Move className="h-3.5 w-3.5" />} label="移动" onClick={handleMove} />
       </ActionGroup>
     </PanelWrapper>
   )
