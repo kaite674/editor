@@ -30,14 +30,14 @@ type FenceStyleValue = 'slat' | 'rail' | 'privacy'
 type FenceBaseStyleValue = 'grounded' | 'floating'
 
 const FENCE_STYLE_OPTIONS: { label: string; value: FenceStyleValue }[] = [
-  { label: 'Slat', value: 'slat' },
-  { label: 'Rail', value: 'rail' },
-  { label: 'Privacy', value: 'privacy' },
+  { label: '板条', value: 'slat' },
+  { label: '栏杆', value: 'rail' },
+  { label: '隐私', value: 'privacy' },
 ]
 
 const FENCE_BASE_STYLE_OPTIONS: { label: string; value: FenceBaseStyleValue }[] = [
-  { label: 'Grounded', value: 'grounded' },
-  { label: 'Floating', value: 'floating' },
+  { label: '接地', value: 'grounded' },
+  { label: '悬浮', value: 'floating' },
 ]
 
 export function FencePanel() {
@@ -99,7 +99,7 @@ export function FencePanel() {
       title={node.name || 'Fence'}
       width={300}
     >
-      <PanelSection title="Style">
+      <PanelSection title="样式">
         <SegmentedControl
           onChange={(value) => handleUpdate({ style: value })}
           options={FENCE_STYLE_OPTIONS}
@@ -114,12 +114,12 @@ export function FencePanel() {
         <ToggleControl
           checked={node.showInfill ?? true}
           className="mt-2"
-          label="Fence Infill"
+          label="围栏填充物"
           onChange={(checked) => handleUpdate({ showInfill: checked })}
         />
       </PanelSection>
 
-      <PanelSection title="Dimensions">
+      <PanelSection title="尺寸">
         <SliderControl
           label="Length"
           max={50}
@@ -162,7 +162,7 @@ export function FencePanel() {
         />
       </PanelSection>
 
-      <PanelSection title="Structure">
+      <PanelSection title="结构">
         <SliderControl
           label="Base Height"
           max={1}

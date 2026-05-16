@@ -36,26 +36,26 @@ import { ToggleControl } from '../controls/toggle-control'
 import { PanelWrapper } from './panel-wrapper'
 
 const RAILING_MODE_OPTIONS: { label: string; value: StairRailingMode }[] = [
-  { label: 'None', value: 'none' },
-  { label: 'Left', value: 'left' },
-  { label: 'Right', value: 'right' },
-  { label: 'Both', value: 'both' },
+  { label: '无', value: 'none' },
+  { label: '左', value: 'left' },
+  { label: '右', value: 'right' },
+  { label: '两边', value: 'both' },
 ]
 
 const STAIR_TYPE_OPTIONS: { label: string; value: StairType }[] = [
-  { label: 'Straight', value: 'straight' },
-  { label: 'Curved', value: 'curved' },
-  { label: 'Spiral', value: 'spiral' },
+  { label: '直梯', value: 'straight' },
+  { label: '弧形', value: 'curved' },
+  { label: '螺旋', value: 'spiral' },
 ]
 
 const TOP_LANDING_MODE_OPTIONS: { label: string; value: StairTopLandingMode }[] = [
-  { label: 'None', value: 'none' },
-  { label: 'Integrated', value: 'integrated' },
+  { label: '无', value: 'none' },
+  { label: '集成', value: 'integrated' },
 ]
 
 const STAIR_SLAB_OPENING_OPTIONS: { label: string; value: StairSlabOpeningMode }[] = [
-  { label: 'None', value: 'none' },
-  { label: 'Destination', value: 'destination' },
+  { label: '无', value: 'none' },
+  { label: '目的地', value: 'destination' },
 ]
 
 export function StairPanel() {
@@ -447,7 +447,7 @@ export function StairPanel() {
         </PanelSection>
       )}
 
-      <PanelSection title="Position">
+      <PanelSection title="位置">
         <SliderControl
           label="X"
           max={50}
@@ -491,7 +491,7 @@ export function StairPanel() {
           value={Math.round(node.position[2] * 100) / 100}
         />
         <SliderControl
-          label="Rotation"
+          label="旋转"
           max={180}
           min={-180}
           onChange={(degrees) => {
@@ -520,7 +520,7 @@ export function StairPanel() {
         </div>
       </PanelSection>
 
-      <PanelSection title="Railing">
+      <PanelSection title="扶手">
         <SegmentedControl
           onChange={(value) => handleUpdate({ railingMode: value })}
           options={RAILING_MODE_OPTIONS}
@@ -540,12 +540,12 @@ export function StairPanel() {
         )}
       </PanelSection>
 
-      <PanelSection title="Actions">
+      <PanelSection title="操作">
         <ActionGroup>
-          <ActionButton icon={<Move className="h-3.5 w-3.5" />} label="Move" onClick={handleMove} />
+          <ActionButton icon={<Move className="h-3.5 w-3.5" />} label="移动" onClick={handleMove} />
           <ActionButton
             icon={<Copy className="h-3.5 w-3.5" />}
-            label="Duplicate"
+            label="复制"
             onClick={handleDuplicate}
           />
           <ActionButton

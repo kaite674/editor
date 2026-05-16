@@ -468,27 +468,27 @@ export function ElevatorPanel() {
     <PanelWrapper
       icon="/icons/elevator.svg"
       onClose={handleClose}
-      title={node.name || 'Elevator'}
+      title={node.name || '电梯'}
       width={300}
     >
-      <PanelSection title="Actions">
+      <PanelSection title="操作">
         <ActionGroup>
-          <ActionButton icon={<Move className="h-3.5 w-3.5" />} label="Move" onClick={handleMove} />
+          <ActionButton icon={<Move className="h-3.5 w-3.5" />} label="移动" onClick={handleMove} />
           <ActionButton
             icon={<Copy className="h-3.5 w-3.5" />}
-            label="Duplicate"
+            label="复制"
             onClick={handleDuplicate}
           />
           <ActionButton
             className="text-destructive hover:text-destructive"
             icon={<Trash2 className="h-3.5 w-3.5" />}
-            label="Delete"
+            label="删除"
             onClick={handleDelete}
           />
         </ActionGroup>
       </PanelSection>
 
-      <PanelSection title="Position">
+      <PanelSection title="位置">
         <SliderControl
           label="X"
           max={50}
@@ -553,7 +553,7 @@ export function ElevatorPanel() {
         />
       </PanelSection>
 
-      <PanelSection title="Rotation">
+      <PanelSection title="旋转">
         <SliderControl
           label="Yaw"
           max={180}
@@ -584,7 +584,7 @@ export function ElevatorPanel() {
         </div>
       </PanelSection>
 
-      <PanelSection title="Cab">
+      <PanelSection title="轿厢">
         <MetricControl
           label="Width"
           max={4}
@@ -623,10 +623,10 @@ export function ElevatorPanel() {
         />
       </PanelSection>
 
-      <PanelSection title="Shaft">
+      <PanelSection title="井道">
         <div className="space-y-1.5">
           <div className="px-1 text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
-            Shaft Style
+            Shaft 样式
           </div>
           <select
             className="h-9 w-full rounded-lg border border-border/50 bg-[#2C2C2E] px-3 text-sm text-foreground"
@@ -643,7 +643,7 @@ export function ElevatorPanel() {
           </select>
         </div>
         <MetricControl
-          label="Shaft Width"
+          label="井道宽度"
           max={5}
           min={displayNode.width}
           onChange={(value) => previewMetric('shaftWidth', Math.max(value, displayNode.width))}
