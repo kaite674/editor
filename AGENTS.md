@@ -49,3 +49,39 @@ Invoke the `review-architecture` skill (`.agents/skills/review-architecture/SKIL
 - After two consecutive tool failures, stop and change approach.
 - Don't introduce backwards-compatibility shims, dead code, or speculative abstractions.
 - Don't write new comments unless they explain a non-obvious *why*.
+
+## Coze Configuration
+
+This project is configured for Coze platform deployment.
+
+### Project Type
+- **Type**: Web (Next.js 3D Editor)
+- **Runtime**: Node.js 24
+- **Package Manager**: pnpm (via pnpm-workspace.yaml)
+
+### Coze Files
+- **Root `.coze`**: `/workspace/projects/.coze`
+- **Subproject `.coze`**: `/workspace/projects/apps/editor/.coze`
+
+### Preview Configuration
+- **Preview Enabled**: Yes
+- **Dev Scripts**: `apps/editor/scripts/coze-preview-build.sh`, `apps/editor/scripts/coze-preview-run.sh`
+- **Preview Port**: 5000 (IPv4: 0.0.0.0)
+- **Verification**: curl returns 200, ss shows 0.0.0.0:5000
+
+### Deploy Configuration
+- **Kind**: Service
+- **Flavor**: Web
+- **Build Script**: `.cozeproj/scripts/deploy_build.sh`
+- **Run Script**: `.cozeproj/scripts/deploy_run.sh`
+- **Port**: 5000
+
+### Workspace Adaptations
+- Created `pnpm-workspace.yaml` for pnpm compatibility (original uses bun)
+- Fixed local package references: `@repo/typescript-config` → `@pascal/typescript-config`, `@repo/eslint-config` → `@pascal/eslint-config`
+- All workspace dependencies use `workspace:*` protocol
+
+### Key Entry Points
+- **Dev**: `pnpm exec next dev --hostname 0.0.0.0 --port 5000`
+- **Build**: `pnpm exec next build`
+- **Start**: `pnpm exec next start --port 5000`
