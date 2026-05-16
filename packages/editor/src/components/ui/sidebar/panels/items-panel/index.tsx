@@ -101,9 +101,9 @@ export function ItemsPanel({
   // filter even before they own any items. Selecting "Mine" with no
   // matching items falls through to the empty/no-results state.
   const sourceChips: Array<{ id: AssetInput['source']; label: string }> = [
-    { id: 'library', label: 'Library' },
-    { id: 'community', label: 'Community' },
-    { id: 'mine', label: 'Mine' },
+    { id: 'library', label: '库' },
+    { id: 'community', label: '社区' },
+    { id: 'mine', label: '我的' },
   ]
   const allTags = Array.from(new Set(categoryItems.flatMap((item) => item.tags ?? [])))
   const placementTags = allTags.filter((t) => PLACEMENT_TAGS.has(t))
@@ -168,7 +168,7 @@ export function ItemsPanel({
               setSearch(e.target.value)
               onSearchChange?.(e.target.value)
             }}
-            placeholder="Search..."
+            placeholder="搜索..."
             type="text"
             value={search}
           />
@@ -210,7 +210,7 @@ export function ItemsPanel({
                   onClick={() => setActivePlacementTag(null)}
                   type="button"
                 >
-                  All
+                  全部
                 </button>
                 {placementTags.map((tag) => {
                   const count = placementCount(tag)
@@ -231,7 +231,7 @@ export function ItemsPanel({
                       onClick={() => setActivePlacementTag(isActive ? null : tag)}
                       type="button"
                     >
-                      {tag}
+                      {tag === 'floor' ? '地面' : tag === 'wall' ? '墙面' : tag === 'ceiling' ? '天花板' : tag === 'countertop' ? '台面' : tag}
                       <span
                         className={cn(
                           'text-[10px]',

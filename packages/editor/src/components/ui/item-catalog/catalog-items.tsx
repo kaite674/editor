@@ -4,7 +4,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'cactus',
     category: 'furniture',
-    name: 'Cactus',
+    name: '仙人掌',
     tags: [
       'cactus',
       'rack',
@@ -33,7 +33,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'tv-stand',
     category: 'furniture',
-    name: 'TV Stand',
+    name: '电视柜',
     tags: ['floor', 'storage'],
     thumbnail:
       'https://byrpxoiotywskoojsrzd.supabase.co/storage/v1/object/public/items/system/tv-stand/thumbnail.png',
@@ -49,7 +49,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'dining-table-mo9ms5yh',
     category: 'furniture',
-    name: 'Dining table',
+    name: '餐桌',
     tags: [
       'dining',
       'table',
@@ -78,7 +78,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'single-bed',
     category: 'furniture',
-    name: 'Single Bed',
+    name: '单人床',
     tags: ['floor', 'bedroom'],
     thumbnail:
       'https://byrpxoiotywskoojsrzd.supabase.co/storage/v1/object/public/items/system/single-bed/thumbnail.png',
@@ -93,7 +93,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'livingroom-chair',
     category: 'furniture',
-    name: 'Livingroom Chair',
+    name: '客厅椅',
     tags: [
       'chair',
       'armchair',
@@ -121,7 +121,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'small-indoor-plant',
     category: 'furniture',
-    name: 'Small Plant',
+    name: '小植物',
     tags: ['countertop', 'decor', 'vegetation'],
     thumbnail:
       'https://byrpxoiotywskoojsrzd.supabase.co/storage/v1/object/public/items/system/small-indoor-plant/thumbnail.png',
@@ -136,7 +136,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'column',
     category: 'furniture',
-    name: 'Column',
+    name: '柱子',
     tags: [
       'column',
       'pillar',
@@ -167,7 +167,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'barbell',
     category: 'furniture',
-    name: 'Barbell',
+    name: '杠铃',
     tags: [
       'barbell',
       'weight',
@@ -197,7 +197,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'toy',
     category: 'furniture',
-    name: 'Toy',
+    name: '玩具',
     tags: ['floor', 'kids', 'decor'],
     thumbnail:
       'https://byrpxoiotywskoojsrzd.supabase.co/storage/v1/object/public/items/system/toy/thumbnail.png',
@@ -212,7 +212,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'barbell-stand',
     category: 'furniture',
-    name: 'Barbell Stand',
+    name: '杠铃架',
     tags: [
       'rack',
       'stand',
@@ -242,7 +242,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'books',
     category: 'furniture',
-    name: 'Books',
+    name: '书籍',
     tags: [
       'books',
       'novels',
@@ -273,7 +273,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'stool',
     category: 'furniture',
-    name: 'Stool',
+    name: '凳子',
     tags: ['floor', 'seating'],
     thumbnail:
       'https://byrpxoiotywskoojsrzd.supabase.co/storage/v1/object/public/items/system/stool/thumbnail.png',
@@ -288,7 +288,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'pool-table',
     category: 'furniture',
-    name: 'Pool table',
+    name: '台球桌',
     tags: [
       'pool',
       'billiards',
@@ -319,7 +319,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'bookshelf',
     category: 'furniture',
-    name: 'Bookshelf',
+    name: '书架',
     tags: [
       'bookshelf',
       'bookcase',
@@ -350,7 +350,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'coat-rack',
     category: 'furniture',
-    name: 'Coat Rack',
+    name: '衣架',
     tags: [
       'coatrack',
       'rack',
@@ -380,7 +380,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'car-toy',
     category: 'furniture',
-    name: 'Car Toy',
+    name: '玩具车',
     tags: [
       'car',
       'toy',
@@ -411,7 +411,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'bedside-table',
     category: 'furniture',
-    name: 'Bedside Table',
+    name: '床头柜',
     tags: [
       'nightstand',
       'table',
@@ -440,7 +440,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'sofa',
     category: 'furniture',
-    name: 'Sofa',
+    name: '沙发',
     tags: ['floor', 'seating'],
     thumbnail:
       'https://byrpxoiotywskoojsrzd.supabase.co/storage/v1/object/public/items/system/sofa/thumbnail.png',
@@ -455,7 +455,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'bunkbed',
     category: 'furniture',
-    name: 'Bunkbed',
+    name: '双层床',
     tags: [
       'bunkbed',
       'bed',
@@ -485,7 +485,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'my-leather-couch-modp80ha',
     category: 'furniture',
-    name: 'My leather couch',
+    name: '我的皮沙发',
     thumbnail:
       'https://byrpxoiotywskoojsrzd.supabase.co/storage/v1/object/public/items/system/my-leather-couch-modp80ha/thumbnail.png',
     src: 'https://byrpxoiotywskoojsrzd.supabase.co/storage/v1/object/public/items/system/my-leather-couch-modp80ha/models/item_model_kgORhH5vwFK8xub0.glb',
@@ -499,7 +499,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'office-table',
     category: 'furniture',
-    name: 'Office Table',
+    name: '办公桌',
     tags: [
       'desk',
       'table',
@@ -529,7 +529,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'dining-table',
     category: 'furniture',
-    name: 'Dining Table',
+    name: '餐桌',
     tags: [
       'table',
       'dining',
@@ -558,7 +558,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'guitar',
     category: 'furniture',
-    name: 'Guitar',
+    name: '吉他',
     tags: [
       'guitar',
       'instrument',
@@ -586,7 +586,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'trash-bin',
     category: 'furniture',
-    name: 'Trash Bin',
+    name: '垃圾桶',
     tags: ['floor'],
     thumbnail:
       'https://byrpxoiotywskoojsrzd.supabase.co/storage/v1/object/public/items/system/trash-bin/thumbnail.png',
@@ -601,7 +601,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'recessed-light',
     category: 'furniture',
-    name: 'Recessed Light',
+    name: '嵌入式灯',
     tags: [
       'recessed',
       'downlight',
@@ -647,7 +647,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'shelf',
     category: 'furniture',
-    name: 'Shelf',
+    name: '架子',
     tags: [
       'shelf',
       'shelving',
@@ -678,7 +678,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'table-lamp',
     category: 'furniture',
-    name: 'Table Lamp',
+    name: '台灯',
     tags: ['countertop', 'lighting'],
     thumbnail:
       'https://byrpxoiotywskoojsrzd.supabase.co/storage/v1/object/public/items/system/table-lamp/thumbnail.png',
@@ -693,7 +693,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'ceiling-lamp',
     category: 'furniture',
-    name: 'Ceiling Lamp',
+    name: '吸顶灯',
     tags: [
       'lamp',
       'light',
@@ -739,7 +739,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'closet',
     category: 'furniture',
-    name: 'Closet',
+    name: '衣柜',
     tags: [
       'closet',
       'wardrobe',
@@ -769,7 +769,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'coffee-table',
     category: 'furniture',
-    name: 'Coffee Table',
+    name: '茶几',
     tags: [
       'table',
       'cocktail',
@@ -799,7 +799,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'dining-chair',
     category: 'furniture',
-    name: 'Dining Chair',
+    name: '餐椅',
     tags: [
       'chair',
       'seating',
@@ -827,7 +827,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'dresser',
     category: 'furniture',
-    name: 'Dresser',
+    name: '梳妆台',
     tags: [
       'dresser',
       'chest',
@@ -856,7 +856,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'ikea-kallax-1x4-moa2y49n',
     category: 'furniture',
-    name: 'Ikea Kallax 2x4',
+    name: '宜家 Kallax 2x4',
     tags: [
       'shelf',
       'bookcase',
@@ -886,7 +886,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'indoor-plant',
     category: 'furniture',
-    name: 'Indoor Plant',
+    name: '室内植物',
     tags: [
       'plant',
       'greenery',
@@ -916,7 +916,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'ironing-board',
     category: 'furniture',
-    name: 'Ironing Board',
+    name: '熨衣板',
     tags: [
       'ironing',
       'board',
@@ -944,7 +944,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'double-bed',
     category: 'furniture',
-    name: 'Double Bed',
+    name: '双人床',
     tags: [
       'bed',
       'bedstead',
@@ -973,7 +973,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'floor-lamp',
     category: 'furniture',
-    name: 'Floor Lamp',
+    name: '落地灯',
     tags: [
       'lamp',
       'luminaire',
@@ -1019,7 +1019,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'herman-miller-aeron-mo8x36k9',
     category: 'furniture',
-    name: 'Herman Miller Aeron',
+    name: 'Herman Miller Aeron 椅',
     tags: ['office'],
     thumbnail:
       'https://byrpxoiotywskoojsrzd.supabase.co/storage/v1/object/public/items/system/herman-miller-aeron-mo8x36k9/thumbnail.png',
@@ -1034,7 +1034,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'easel',
     category: 'furniture',
-    name: 'Easel',
+    name: '画架',
     tags: [
       'easel',
       'stand',
@@ -1064,7 +1064,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'lounge-chair',
     category: 'furniture',
-    name: 'Lounge Chair',
+    name: '躺椅',
     tags: [
       'chair',
       'armchair',
@@ -1093,7 +1093,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'office-chair',
     category: 'furniture',
-    name: 'Office Chair',
+    name: '办公椅',
     tags: [
       'chair',
       'seating',
@@ -1122,7 +1122,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'piano',
     category: 'furniture',
-    name: 'Piano',
+    name: '钢琴',
     tags: [
       'piano',
       'instrument',
@@ -1153,7 +1153,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'picture',
     category: 'furniture',
-    name: 'Picture',
+    name: '挂画',
     tags: [
       'picture',
       'frame',
@@ -1185,7 +1185,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'rectangular-carpet',
     category: 'furniture',
-    name: 'Rectangular Carpet',
+    name: '长方形地毯',
     tags: [
       'carpet',
       'rug',
@@ -1214,7 +1214,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'round-mirror',
     category: 'furniture',
-    name: 'Rounded Mirror',
+    name: '圆形镜子',
     tags: [
       'mirror',
       'glass',
@@ -1245,7 +1245,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'round-carpet',
     category: 'furniture',
-    name: 'Round Carpet',
+    name: '圆形地毯',
     tags: [
       'carpet',
       'rug',
@@ -1276,7 +1276,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'threadmill',
     category: 'furniture',
-    name: 'Threadmill',
+    name: '跑步机',
     tags: ['floor', 'fitness'],
     thumbnail:
       'https://byrpxoiotywskoojsrzd.supabase.co/storage/v1/object/public/items/system/threadmill/thumbnail.png',
@@ -1291,7 +1291,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'standing-desk-mo8wgz95',
     category: 'furniture',
-    name: 'Standing Desk',
+    name: '站立式办公桌',
     tags: ['office'],
     thumbnail:
       'https://byrpxoiotywskoojsrzd.supabase.co/storage/v1/object/public/items/system/standing-desk-mo8wgz95/thumbnail.png',
@@ -1306,7 +1306,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'sprinkler',
     category: 'appliance',
-    name: 'Sprinkler',
+    name: '洒水器',
     tags: ['ceiling', 'safety'],
     thumbnail:
       'https://byrpxoiotywskoojsrzd.supabase.co/storage/v1/object/public/items/system/sprinkler/thumbnail.png',
@@ -1322,7 +1322,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'exit-sign',
     category: 'appliance',
-    name: 'Exit Sign',
+    name: '出口标志',
     tags: [
       'sign',
       'signage',
@@ -1353,7 +1353,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'sewing-machine',
     category: 'appliance',
-    name: 'Sewing Machine',
+    name: '缝纫机',
     tags: [
       'sewing',
       'machine',
@@ -1383,7 +1383,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'television',
     category: 'appliance',
-    name: 'Television',
+    name: '电视',
     tags: ['floor', 'electronics'],
     thumbnail:
       'https://byrpxoiotywskoojsrzd.supabase.co/storage/v1/object/public/items/system/television/thumbnail.png',
@@ -1398,7 +1398,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'power-outlet-moa09g0o',
     category: 'appliance',
-    name: 'Power Outlet',
+    name: '电源插座',
     tags: ['electric'],
     thumbnail:
       'https://byrpxoiotywskoojsrzd.supabase.co/storage/v1/object/public/items/system/power-outlet-moa09g0o/thumbnail.png',
@@ -1414,7 +1414,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'ac-block',
     category: 'appliance',
-    name: 'AC block',
+    name: '空调外机',
     tags: [
       'conditioner',
       'cooler',
@@ -1445,7 +1445,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'stereo-speaker',
     category: 'appliance',
-    name: 'Stereo Speaker',
+    name: '音响',
     tags: ['floor', 'electronics'],
     thumbnail:
       'https://byrpxoiotywskoojsrzd.supabase.co/storage/v1/object/public/items/system/stereo-speaker/thumbnail.png',
@@ -1460,7 +1460,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'thermostat',
     category: 'appliance',
-    name: 'Thermostat',
+    name: '温控器',
     tags: ['wall', 'climate', 'electrical'],
     thumbnail:
       'https://byrpxoiotywskoojsrzd.supabase.co/storage/v1/object/public/items/system/thermostat/thumbnail.png',
@@ -1476,7 +1476,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'toaster',
     category: 'appliance',
-    name: 'Toaster',
+    name: '烤面包机',
     tags: ['countertop', 'electronics'],
     thumbnail:
       'https://byrpxoiotywskoojsrzd.supabase.co/storage/v1/object/public/items/system/toaster/thumbnail.png',
@@ -1491,7 +1491,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'kettle',
     category: 'appliance',
-    name: 'Kettle',
+    name: '电水壶',
     tags: [
       'kettle',
       'teapot',
@@ -1521,7 +1521,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'hydrant',
     category: 'appliance',
-    name: 'Hydrant',
+    name: '消防栓',
     tags: [
       'hydrant',
       'faucet',
@@ -1552,7 +1552,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'fire-detector',
     category: 'appliance',
-    name: 'Fire Detector',
+    name: '火灾探测器',
     tags: [
       'detector',
       'alarm',
@@ -1584,7 +1584,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'smoke-detector',
     category: 'appliance',
-    name: 'Smoke Detector',
+    name: '烟雾探测器',
     tags: ['ceiling', 'safety'],
     thumbnail:
       'https://byrpxoiotywskoojsrzd.supabase.co/storage/v1/object/public/items/system/smoke-detector/thumbnail.png',
@@ -1600,7 +1600,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'coffee-machine',
     category: 'appliance',
-    name: 'Coffee Machine',
+    name: '咖啡机',
     tags: [
       'coffee',
       'machine',
@@ -1630,7 +1630,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'ceiling-fan',
     category: 'appliance',
-    name: 'Ceiling fan',
+    name: '吊扇',
     tags: [
       'fan',
       'ventilator',
@@ -1665,7 +1665,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'iron',
     category: 'appliance',
-    name: 'Iron',
+    name: '熨斗',
     tags: [
       'iron',
       'steamer',
@@ -1695,7 +1695,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'air-conditioning',
     category: 'appliance',
-    name: 'Air Conditioning',
+    name: '空调',
     tags: [
       'conditioner',
       'cooling',
@@ -1726,7 +1726,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'computer',
     category: 'appliance',
-    name: 'Computer',
+    name: '电脑',
     tags: [
       'computer',
       'desktop',
@@ -1756,7 +1756,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'alarm-keypad',
     category: 'appliance',
-    name: 'Alarm Keypad',
+    name: '报警键盘',
     tags: [
       'alarm',
       'keypad',
@@ -1820,7 +1820,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'electric-panel',
     category: 'appliance',
-    name: 'Electric Panel',
+    name: '配电箱',
     tags: [
       'breaker',
       'box',
@@ -1851,7 +1851,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'bathroom-sink',
     category: 'bathroom',
-    name: 'Bathroom Sink',
+    name: '浴室水槽',
     tags: [
       'sink',
       'basin',
@@ -1881,7 +1881,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'shower-angle',
     category: 'bathroom',
-    name: 'Angle Shower',
+    name: '转角淋浴',
     tags: [
       'shower',
       'enclosure',
@@ -1911,7 +1911,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'toilet-paper',
     category: 'bathroom',
-    name: 'Toilet Paper',
+    name: '卫生纸',
     tags: ['wall', 'decor'],
     thumbnail:
       'https://byrpxoiotywskoojsrzd.supabase.co/storage/v1/object/public/items/system/toilet-paper/thumbnail.png',
@@ -1927,7 +1927,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'washing-machine',
     category: 'bathroom',
-    name: 'Washing Machine',
+    name: '洗衣机',
     tags: ['floor', 'large', 'electronics'],
     thumbnail:
       'https://byrpxoiotywskoojsrzd.supabase.co/storage/v1/object/public/items/system/washing-machine/thumbnail.png',
@@ -1942,7 +1942,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'shower-rug',
     category: 'bathroom',
-    name: 'Shower Rug',
+    name: '淋浴垫',
     tags: [
       'rug',
       'mat',
@@ -1974,7 +1974,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'bathtub',
     category: 'bathroom',
-    name: 'Bathtub',
+    name: '浴缸',
     tags: [
       'bathtub',
       'tub',
@@ -2002,7 +2002,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'laundry-bag',
     category: 'bathroom',
-    name: 'Laundry Bag',
+    name: '洗衣袋',
     tags: [
       'laundry',
       'bag',
@@ -2031,7 +2031,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'shower-square',
     category: 'bathroom',
-    name: 'Squared Shower',
+    name: '方形淋浴',
     tags: ['floor', 'large'],
     thumbnail:
       'https://byrpxoiotywskoojsrzd.supabase.co/storage/v1/object/public/items/system/shower-square/thumbnail.png',
@@ -2046,7 +2046,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'drying-rack',
     category: 'bathroom',
-    name: 'Drying Rack',
+    name: '晾衣架',
     tags: [
       'dryer',
       'rack',
@@ -2074,7 +2074,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'toilet',
     category: 'bathroom',
-    name: 'Toilet',
+    name: '马桶',
     tags: ['floor', 'large'],
     thumbnail:
       'https://byrpxoiotywskoojsrzd.supabase.co/storage/v1/object/public/items/system/toilet/thumbnail.png',
@@ -2089,7 +2089,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'microwave',
     category: 'kitchen',
-    name: 'Microwave',
+    name: '微波炉',
     tags: [
       'microwave',
       'oven',
@@ -2120,7 +2120,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'cutting-board',
     category: 'kitchen',
-    name: 'Cutting Board',
+    name: '砧板',
     tags: [
       'board',
       'wood',
@@ -2149,7 +2149,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'kitchen-utensils',
     category: 'kitchen',
-    name: 'Kitchen Utensils',
+    name: '厨房用具',
     tags: [
       'utensils',
       'tools',
@@ -2180,7 +2180,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'kitchen-counter',
     category: 'kitchen',
-    name: 'Kitchen Counter',
+    name: '厨房台面',
     tags: [
       'counter',
       'countertop',
@@ -2211,7 +2211,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'hood',
     category: 'kitchen',
-    name: 'Hood',
+    name: '油烟机',
     tags: [
       'hood',
       'vent',
@@ -2242,7 +2242,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'wooden-kitchen-bar-moa2hhh4',
     category: 'kitchen',
-    name: 'Kitchen Bar',
+    name: '厨房吧台',
     tags: [
       'bar',
       'counter',
@@ -2272,7 +2272,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'kitchen-cabinet',
     category: 'kitchen',
-    name: 'Kitchen Cabinet',
+    name: '厨房橱柜',
     tags: [
       'cabinet',
       'cupboard',
@@ -2301,7 +2301,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'kitchen',
     category: 'kitchen',
-    name: 'Kitchen',
+    name: '厨房',
     tags: [
       'kitchen',
       'cabinetry',
@@ -2331,7 +2331,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'frying-pan',
     category: 'kitchen',
-    name: 'Frying Pan',
+    name: '煎锅',
     tags: [
       'frying',
       'pan',
@@ -2361,7 +2361,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'fruits',
     category: 'kitchen',
-    name: 'Fruits',
+    name: '水果',
     tags: [
       'fruit',
       'produce',
@@ -2391,7 +2391,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'fridge',
     category: 'kitchen',
-    name: 'Fridge',
+    name: '冰箱',
     tags: [
       'fridge',
       'refrigerator',
@@ -2421,7 +2421,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'kitchen-shelf',
     category: 'kitchen',
-    name: 'Kitchen Shelf',
+    name: '厨房置物架',
     tags: [
       'shelf',
       'shelving',
@@ -2452,7 +2452,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'wine-bottle',
     category: 'kitchen',
-    name: 'Wine Bottle',
+    name: '葡萄酒瓶',
     tags: ['countertop', 'decor'],
     thumbnail:
       'https://byrpxoiotywskoojsrzd.supabase.co/storage/v1/object/public/items/system/wine-bottle/thumbnail.png',
@@ -2467,7 +2467,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'stove',
     category: 'kitchen',
-    name: 'Stove',
+    name: '炉灶',
     tags: ['floor', 'large'],
     thumbnail:
       'https://byrpxoiotywskoojsrzd.supabase.co/storage/v1/object/public/items/system/stove/thumbnail.png',
@@ -2482,7 +2482,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'ball',
     category: 'outdoor',
-    name: 'Ball',
+    name: '球',
     tags: [
       'ball',
       'sphere',
@@ -2513,7 +2513,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'bush',
     category: 'outdoor',
-    name: 'Bush',
+    name: '灌木',
     tags: [
       'bush',
       'shrub',
@@ -2575,7 +2575,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'parking-spot',
     category: 'outdoor',
-    name: 'Parking Spot',
+    name: '停车位',
     tags: [
       'parking',
       'space',
@@ -2604,7 +2604,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'palm',
     category: 'outdoor',
-    name: 'Palm',
+    name: '棕榈树',
     tags: [
       'palm',
       'tree',
@@ -2634,7 +2634,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'sunbed',
     category: 'outdoor',
-    name: 'Sunbed',
+    name: '躺椅',
     tags: ['leisure', 'seating', 'floor'],
     thumbnail:
       'https://byrpxoiotywskoojsrzd.supabase.co/storage/v1/object/public/items/system/sunbed/thumbnail.png',
@@ -2649,7 +2649,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'fir-tree',
     category: 'outdoor',
-    name: 'Fir',
+    name: '冷杉树',
     tags: [
       'fir',
       'tree',
@@ -2679,7 +2679,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'tree',
     category: 'outdoor',
-    name: 'Tree',
+    name: '树',
     tags: ['vegetation'],
     thumbnail:
       'https://byrpxoiotywskoojsrzd.supabase.co/storage/v1/object/public/items/system/tree/thumbnail.png',
@@ -2694,7 +2694,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'skate',
     category: 'outdoor',
-    name: 'Skate',
+    name: '滑板',
     tags: ['leisure', 'kids', 'floor'],
     thumbnail:
       'https://byrpxoiotywskoojsrzd.supabase.co/storage/v1/object/public/items/system/skate/thumbnail.png',
@@ -2709,7 +2709,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: '1967-chevrolet-camaro-moa24wsf',
     category: 'outdoor',
-    name: '1967 Chevrolet Camaro',
+    name: '1967 雪佛兰科迈罗',
     tags: ['car'],
     thumbnail:
       'https://byrpxoiotywskoojsrzd.supabase.co/storage/v1/object/public/items/system/1967-chevrolet-camaro-moa24wsf/thumbnail.png',
@@ -2724,7 +2724,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'outdoor-playhouse',
     category: 'outdoor',
-    name: 'Outdoor Playhouse',
+    name: '户外游戏屋',
     tags: [
       'playhouse',
       'cottage',
@@ -2755,7 +2755,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'patio-umbrella',
     category: 'outdoor',
-    name: 'Patio Umbrella',
+    name: '庭院伞',
     tags: [
       'umbrella',
       'parasol',
@@ -2786,7 +2786,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'pillar',
     category: 'outdoor',
-    name: 'Pillar',
+    name: '柱子',
     tags: [
       'pillar',
       'column',
@@ -2814,7 +2814,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'scooter',
     category: 'outdoor',
-    name: 'Scooter',
+    name: '滑板车',
     tags: [
       'scooter',
       'kickscooter',
@@ -2845,7 +2845,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'tesla',
     category: 'outdoor',
-    name: 'Tesla Model Y',
+    name: '特斯拉 Model Y',
     tags: [
       'tesla',
       'car',
@@ -2874,7 +2874,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'dishwasher-movn72ls',
     category: 'appliance',
-    name: 'Dishwasher',
+    name: '洗碗机',
     tags: ['dishwasher', 'appliance', 'kitchen', 'floor'],
     thumbnail:
       'https://byrpxoiotywskoojsrzd.supabase.co/storage/v1/object/public/items/users/user_7hUFMrlrAX1vtIwT/dishwasher-movn72ls/thumbnail.png',
@@ -2889,7 +2889,7 @@ export const CATALOG_ITEMS: AssetInput[] = [
   {
     id: 'fireplace-movn1fnn',
     category: 'furniture',
-    name: 'Fireplace',
+    name: '壁炉',
     tags: ['fireplace', 'hearth', 'mantel', 'wall'],
     thumbnail:
       'https://byrpxoiotywskoojsrzd.supabase.co/storage/v1/object/public/items/users/user_7hUFMrlrAX1vtIwT/fireplace-movn1fnn/thumbnail.png',
